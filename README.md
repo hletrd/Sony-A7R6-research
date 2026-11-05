@@ -1,6 +1,6 @@
 # Sony-A7R6-research
 
-Public research into Sony A7R VI (ILCE-7RM6) firmware structure and modification options, using A7R V (ILCE-7RM5) firmware for comparison. This repository records reproducible methods and observed results.
+Public research into Sony A7R VI (ILCE-7RM6) firmware and A7R V (ILCE-7RM5) feature ports, with the FX3 and A1 II as additional reference platforms. This repository records reproducible methods and observed results.
 
 ## Current status
 
@@ -16,6 +16,7 @@ The two firmware filenames were initially swapped and have been corrected. The A
 
 ## Research records
 
+- [A7R V feature-port candidates](docs/research/2026-11-05-a7rv-feature-port-candidates.md)
 - [fwtool a7iv validation](docs/research/2026-11-05-fwtool-a7iv.md)
 - [Sony LUT Camera applicability](docs/research/2026-11-05-sony-lut-camera.md)
 - [External sources](docs/sources.md)

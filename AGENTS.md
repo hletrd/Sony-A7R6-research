@@ -4,6 +4,8 @@
 
 Investigate the firmware structure and modification options of the Sony A7R VI (ILCE-7RM6). Use the A7R V (ILCE-7RM5) for comparison. Distinguish camera models, firmware versions, regions, and input hashes. A method demonstrated on another camera is not a verified A7R VI result.
 
+Also investigate A7R V feature ports using the FX3, A1 II, and A7R VI as reference platforms. Distinguish documented donor features from demonstrated portability to the A7R V.
+
 This repository contains public research records. Keep original firmware, extracted files, device dumps, and execution environments in a separate local workspace. The current work is static file analysis. Analysis commands must not write to or reboot a camera. Follow the scope of any additional work the user requests.
 
 ## Workflow
