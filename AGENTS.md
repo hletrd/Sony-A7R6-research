@@ -1,55 +1,55 @@
-# 작업 규칙
+# Repository instructions
 
-## 연구 범위
+## Research scope
 
-Sony A7R VI(ILCE-7RM6)의 펌웨어 구조와 수정 가능성을 조사한다. A7R V(ILCE-7RM5)는 비교 대상으로 사용한다. 기종, 펌웨어 버전, 지역, 입력 파일 해시를 구분한다. 다른 기종에서 성공한 방법을 A7R VI에서 검증한 결과로 기록하지 않는다.
+Investigate the firmware structure and modification options of the Sony A7R VI (ILCE-7RM6). Use the A7R V (ILCE-7RM5) for comparison. Distinguish camera models, firmware versions, regions, and input hashes. A method demonstrated on another camera is not a verified A7R VI result.
 
-이 저장소는 공개 연구 기록을 관리한다. 원본 펌웨어와 추출 파일, 실기기 덤프, 실행 환경은 별도 로컬 작업 공간에서 관리한다. 현재 작업은 파일을 대상으로 하는 정적 분석이다. 분석 명령에 실기기 쓰기나 재부팅을 포함하지 않는다. 사용자가 추가로 지시한 작업은 해당 범위에서 진행한다.
+This repository contains public research records. Keep original firmware, extracted files, device dumps, and execution environments in a separate local workspace. The current work is static file analysis. Analysis commands must not write to or reboot a camera. Follow the scope of any additional work the user requests.
 
-## 작업 순서
+## Workflow
 
-1. `README.md`와 관련 조사 기록을 읽고 기존 결론과 미해결 항목을 확인한다.
-2. 변경될 수 있는 도구, API, 옵션, 호환성은 공식 문서와 현재 소스에서 확인한다.
-3. 입력 파일의 복사가 끝났는지 확인하고 크기와 SHA-256을 기록한다. 파일명과 내부 모델 정보가 다르면 내부 정보와 공식 배포 정보를 대조한다.
-4. 도구의 저장소 URL, 브랜치, 커밋, 실행 환경, 명령, 종료 코드와 오류를 기록한다.
-5. 원본을 보존하고 별도 경로에 결과를 생성한다. 필요한 범위까지 검증한 뒤 조사 기록과 README의 상태를 갱신한다.
+1. Read `README.md` and the relevant research records. Check existing conclusions and open questions.
+2. Verify changing information, including tools, APIs, options, and compatibility, against official documentation and current source code.
+3. Wait for input copies to finish, then record file sizes and SHA-256 hashes. If filenames conflict with internal model information, compare the internal metadata with official release information.
+4. Record the tool repository, branch, commit, execution environment, command, exit code, and error.
+5. Preserve inputs and write outputs separately. Validate the relevant result, then update the research record and README status.
 
-## 근거와 판정
+## Evidence and conclusions
 
-| 구분 | 기록 기준 |
+| Classification | Required evidence |
 | --- | --- |
-| 직접 확인 | 해시로 식별한 입력에 대해 명령이나 소스 검토로 재현한 결과 |
-| 외부 보고 | 작성자, 날짜, URL이 있는 제삼자의 결과 |
-| 추정 | 관찰과 근거가 있으나 직접 확인하지 못한 해석 |
-| 미확인 | 필요한 자료나 실험이 부족한 항목 |
+| Direct observation | A reproducible command or source inspection against an input identified by its hash |
+| External report | A third-party result with an author, date, and URL |
+| Inference | An interpretation supported by observations but not directly verified |
+| Unverified | A question for which the necessary evidence or experiment is missing |
 
-각 결론에 해당 구분과 근거를 명시한다. 외부 보고와 로컬 결과가 다르면 입력과 환경부터 대조한다. 복호화, 파일 추출, 재패키징, 서명 검증, 설치, 실제 동작을 별도 단계로 기록한다. 한 단계의 성공으로 후속 단계의 성공을 단정하지 않는다.
+Label conclusions with their evidence and classification. When local results differ from external reports, compare inputs and environments first. Track decryption, extraction, repacking, signature validation, installation, and runtime behavior as separate stages. Success at one stage does not establish success at later stages.
 
-키가 일치하지 않거나 도구가 실패한 경우 입력 손상, 컨테이너 형식, 지원 키, 구현 오류를 구분한다. 실패 로그만으로 원인을 확정하지 않는다. 공식 해시를 확인하지 못했다면 로컬 SHA-256을 공식 파일과 대조했다고 쓰지 않는다.
+When a key or tool fails, distinguish input corruption, container format, supported keys, and implementation errors. A failure log alone does not establish the cause. Do not claim comparison of a local SHA-256 with an official firmware hash unless that comparison was actually made.
 
-## 파일 구성
+## Repository layout
 
-| 경로 | 용도 |
+| Path | Purpose |
 | --- | --- |
-| `README.md` | 연구 대상, 현재 상태, 조사 기록의 진입점 |
-| `docs/research/` | 날짜별 실험과 호환성 조사 |
-| `docs/sources.md` | 외부 소스와 용도, 적용 범위 |
-| `data/` | 공개 가능한 해시와 구조화된 측정값 |
+| `README.md` | Research scope, current status, and links to records |
+| `docs/research/` | Dated experiments and compatibility investigations |
+| `docs/sources.md` | External sources, their uses, and applicability |
+| `data/` | Public hashes and structured measurements |
 
-조사 기록에는 질문, 입력, 환경, 방법, 관찰, 판정, 한계, 다음 확인 항목과 출처를 포함한다. 필요한 항목만 사용한다. 같은 결과를 여러 문서에 반복하지 않고 상세 기록을 링크한다. 자료가 없는 빈 디렉터리와 계획용 문서를 만들지 않는다.
+Research records should contain the relevant question, inputs, environment, method, observations, conclusion, limitations, next checks, and sources. Include only useful sections. Link to detailed records instead of duplicating results across documents. Do not create empty directories or placeholder plans without supporting material.
 
-펌웨어 원본이나 추출 바이너리를 공개 저장소에 추가하지 않는다. 식별자, 인증 정보와 개인 파일이 포함된 덤프 및 원시 로그도 로컬에 둔다. 공개 기록에는 결과를 재현하는 데 필요한 메타데이터와 검토한 내용만 포함한다. 제삼자 코드와 자료를 인용할 때 출처와 라이선스를 유지한다.
+Keep firmware and extracted binaries out of this public repository. Keep device identifiers, credentials, personal files, dumps, and raw logs local. Publish only reviewed information and metadata needed to reproduce the result. Preserve provenance and license information for third-party code and material.
 
-## 구현과 검증
+## Implementation and validation
 
-Python 도구는 `uv`로 관리하는 Python 3.14 이상을 사용한다. 의존성을 추가하기 전에 레지스트리의 최신 안정 버전과 호환성을 확인한다. 재현이 필요한 실험은 실제 사용한 버전을 기록한다. 외부 도구는 커밋으로 고정하며 수정한 경우 원본 결과와 수정 후 결과를 구분한다.
+Use Python 3.14 or later managed with `uv`. Check the registry for current stable versions and compatibility before adding dependencies. Record the versions actually used for reproducible experiments. Pin external tools to a commit and distinguish unmodified results from results produced with local patches.
 
-파서를 수정할 때는 길이, 오프셋, 엔디언과 경계 조건을 확인한다. 분석 코드에 맞게 검증하고 문서를 수정할 때는 링크, 수치와 근거를 확인한다. 실행하지 않은 검증을 통과했다고 기록하지 않는다.
+When changing parsers, check lengths, offsets, byte order, and boundary conditions. Validate the behavior affected by code changes. For documentation, verify links, numbers, and evidence. Never report a check as passed if it was not run.
 
-## 문서와 Git
+## Writing and Git
 
-한국어 문서는 담백한 문어체 하다체로 작성한다. 제목은 내용을 나타내는 짧은 명사구로 작성한다. 수치, 모델명, 주소와 명령을 문체 교정 과정에서 바꾸지 않는다.
+Write all project documentation and research records in clear, plain English. Use short descriptive headings. Preserve numbers, model names, addresses, and commands when editing prose.
 
-`AGENTS.md`를 작업 규칙의 원본으로 유지한다. `CLAUDE.md`는 상대 경로 `AGENTS.md`를 가리키는 심볼릭 링크로 유지한다.
+Keep `AGENTS.md` as the source of repository instructions. Keep `CLAUDE.md` as a symlink whose relative target is `AGENTS.md`.
 
-변경 단위로 커밋하고 `git commit -S`로 서명한다. 커밋 제목은 `<type>(<scope>): <gitmoji> <description>` 형식의 명령형으로 작성하며 72자 미만으로 유지한다. AI 기여 표기를 추가하지 않는다. 푸시 직전에 `git pull --rebase`를 실행한다. 최초 푸시에서는 원격 브랜치가 아직 없는지 확인한다.
+Make one commit per logical change and sign it with `git commit -S`. Use an imperative commit title in the form `<type>(<scope>): <gitmoji> <description>`, under 72 characters. Do not add AI attribution. Run `git pull --rebase` immediately before pushing. For an initial push, check whether the remote branch exists.
