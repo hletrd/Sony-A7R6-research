@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-05",
+  "tool_repository": "https://github.com/DavidBuchanan314/fwtool.py",
+  "branch": "a7iv",
+  "tool_commit": "3955d7890fc38daf942bb52827599bfe35de4a14",
+  "environment": {
+    "python": "3.14.2",
+    "uv": "0.13.5",
+    "pycryptodomex": "3.24.1",
+    "PyYAML": "6.0.3"
+  },
+  "official_hash_comparison_performed": false,
+  "files": [
+    {
+      "file": "A7R5_4.00.DAT",
+      "size_bytes": 754525608,
+      "sha256": "51e1176a255a9a4b4782dfbcfa6c5f332b71173bdfe9ed2bcf4fca6bcbc6c2e2",
+      "chunks": [
+        {
+          "type": "DATV",
+          "offset": 8,
+          "size": 4,
+          "value_hex": "01000000"
+        },
+        {
+          "type": "PROV",
+          "offset": 20,
+          "size": 4
+        },
+        {
+          "type": "UDID",
+          "offset": 32,
+          "size": 92
+        },
+        {
+          "type": "FDAT",
+          "offset": 132,
+          "size": 754525456
+        },
+        {
+          "type": "DEND",
+          "offset": 754525596,
+          "size": 4
+        }
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 19.74,
+      "input_unchanged": true,
+      "tool_commit": "3955d7890fc38daf942bb52827599bfe35de4a14",
+      "original_input_name": "A7R6_1.02.DAT",
+      "identified_model": "ILCE-7RM5",
+      "identified_version": "4.00",
+      "identification_basis": "decrypted FDAT metadata and official file size",
+      "crypter": "CXD90057_k8",
+      "model_id": "0x11030080",
+      "ufu_crc_valid": true
+    },
+    {
+      "file": "A7R6_1.02.DAT",
+      "size_bytes": 338327032,
+      "sha256": "831fa09a2839840cd0066fec2cc7ad68c0bb574ecd28ecd4305a64690eb454e9",
+      "chunks": [
+        {
+          "type": "DATV",
+          "offset": 8,
+          "size": 4,
+          "value_hex": "01000000"
+        },
+        {
+          "type": "PROV",
+          "offset": 20,
+          "size": 4
+        },
+        {
+          "type": "UDID",
+          "offset": 32,
+          "size": 44
+        },
+        {
+          "type": "FDAT",
+          "offset": 84,
+          "size": 338326928
+        },
+        {
+          "type": "DEND",
+          "offset": 338327020,
+          "size": 4
+        }
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 1.81,
+      "input_unchanged": true,
+      "tool_commit": "3955d7890fc38daf942bb52827599bfe35de4a14",
+      "original_input_name": "A7R5_4.00.DAT",
+      "identified_model": null,
+      "identified_version": null,
+      "expected_model": "ILCE-7RM6",
+      "expected_version": "1.02",
+      "identification_basis": "inferred from official file size and supplied context; internal identity unverified",
+      "error": "No decrypter found",
+      "ufu_crc_valid": true
+    }
+  ]
+}
