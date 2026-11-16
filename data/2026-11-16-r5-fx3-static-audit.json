@@ -1,0 +1,328 @@
+{
+  "date": "2026-11-16",
+  "model": "ILCE-7RM5",
+  "firmware_version": "4.00",
+  "firmware_sha256": "51e1176a255a9a4b4782dfbcfa6c5f332b71173bdfe9ed2bcf4fca6bcbc6c2e2",
+  "analysis_scope": "Static inspection of five existing extracted components; no runtime reachability, activation or device execution established.",
+  "environment": {
+    "python": "3.14.2",
+    "pyelftools": "0.33",
+    "capstone": "5.0.9"
+  },
+  "inputs": [
+    {
+      "component": "im.elf",
+      "size_bytes": 40920,
+      "sha256": "5171f576d8b76cfbf15581389183b390c445bd6ff9dd97fd6668c5f64e77dc91",
+      "elf": {
+        "machine": "EM_AARCH64",
+        "class": 64,
+        "symbol_sections": [
+          {
+            "name": ".dynsym",
+            "count": 97
+          }
+        ]
+      }
+    },
+    {
+      "component": "appFw.so",
+      "size_bytes": 97368304,
+      "sha256": "41bd8f4cda1f44c7038912837737e1ce6a650065f2108061ada30e5c7f9ce7c7",
+      "elf": {
+        "machine": "EM_AARCH64",
+        "class": 64,
+        "symbol_sections": [
+          {
+            "name": ".dynsym",
+            "count": 1014
+          }
+        ]
+      }
+    },
+    {
+      "component": "libSysDef.so",
+      "size_bytes": 6041280,
+      "sha256": "4a0930755eab99842ede932b6a0ea16bf59af2762a9ebe1a4e60948c63a1b417",
+      "elf": {
+        "machine": "EM_AARCH64",
+        "class": 64,
+        "symbol_sections": [
+          {
+            "name": ".dynsym",
+            "count": 36
+          }
+        ]
+      }
+    },
+    {
+      "component": "cpapp-b.bin",
+      "size_bytes": 17617008,
+      "sha256": "3269bf62426339791fcfbe8529698cd4accbe6c3d2ea61cd7c368a90ab7ee7c8",
+      "elf": null
+    },
+    {
+      "component": "av-cam.bin",
+      "size_bytes": 12956536,
+      "sha256": "640740f3bbd7e20cf49be3288f496415b1d045020c5b9a46ea77fb187699ab04",
+      "elf": null
+    }
+  ],
+  "application_component": "appFw.so",
+  "application_sha256": "41bd8f4cda1f44c7038912837737e1ce6a650065f2108061ada30e5c7f9ce7c7",
+  "address_convention": "ELF virtual addresses before adding a runtime load base; not service-shell property IDs.",
+  "method": "Conservative AArch64 ADRP/ADD address reconstruction, checked with Capstone; ELF relocation lookup; representative surrounding instructions inspected.",
+  "code_reference_counts": {
+    "cine_ei": 6,
+    "dci_4k": 1,
+    "shutter_angle": 1,
+    "user_lut": 5,
+    "anamorphic": 2
+  },
+  "code_references": [
+    {
+      "target": {
+        "category": "cine_ei",
+        "text": "uint8_t remote_presenter::set_is_enable_exposure_index(model::menu_item_id_t, const remote_presenter::remote_presenter_model::model_accessor_exposure_index&)",
+        "file_offset": 70193400,
+        "address": 70193400
+      },
+      "adrp_address": 37920120,
+      "add_address": 37920128,
+      "instructions": [
+        "adrp x2, #0x42f1000",
+        "add x2, x2, #0xf8"
+      ]
+    },
+    {
+      "target": {
+        "category": "cine_ei",
+        "text": "uint8_t remote_presenter::set_is_enable_exposure_index(model::menu_item_id_t, const remote_presenter::remote_presenter_model::model_accessor_exposure_index&)",
+        "file_offset": 70193400,
+        "address": 70193400
+      },
+      "adrp_address": 37920176,
+      "add_address": 37920184,
+      "instructions": [
+        "adrp x2, #0x42f1000",
+        "add x2, x2, #0xf8"
+      ]
+    },
+    {
+      "target": {
+        "category": "cine_ei",
+        "text": "uint8_t remote_presenter::set_is_enable_exposure_index(model::menu_item_id_t, const remote_presenter::remote_presenter_model::model_accessor_exposure_index&)",
+        "file_offset": 70193400,
+        "address": 70193400
+      },
+      "adrp_address": 37920244,
+      "add_address": 37920252,
+      "instructions": [
+        "adrp x2, #0x42f1000",
+        "add x2, x2, #0xf8"
+      ]
+    },
+    {
+      "target": {
+        "category": "cine_ei",
+        "text": "uint8_t remote_presenter::set_is_enable_exposure_index(model::menu_item_id_t, const remote_presenter::remote_presenter_model::model_accessor_exposure_index&)",
+        "file_offset": 70193400,
+        "address": 70193400
+      },
+      "adrp_address": 37920292,
+      "add_address": 37920300,
+      "instructions": [
+        "adrp x2, #0x42f1000",
+        "add x2, x2, #0xf8"
+      ]
+    },
+    {
+      "target": {
+        "category": "cine_ei",
+        "text": "uint8_t remote_presenter::set_is_enable_exposure_index(model::menu_item_id_t, const remote_presenter::remote_presenter_model::model_accessor_exposure_index&)",
+        "file_offset": 70193400,
+        "address": 70193400
+      },
+      "adrp_address": 37920308,
+      "add_address": 37920316,
+      "instructions": [
+        "adrp x2, #0x42f1000",
+        "add x2, x2, #0xf8"
+      ]
+    },
+    {
+      "target": {
+        "category": "dci_4k",
+        "text": "void model::model_api::detail::reboot_for_dci4k_cross_24_00p()",
+        "file_offset": 77576728,
+        "address": 77576728
+      },
+      "adrp_address": 41261604,
+      "add_address": 41261612,
+      "instructions": [
+        "adrp x2, #0x49fb000",
+        "add x2, x2, #0xa18"
+      ]
+    },
+    {
+      "target": {
+        "category": "shutter_angle",
+        "text": "static void model::model_extern::extern_BKID_APP_EXTERN_SHUTTER_ANGLE_STEP()",
+        "file_offset": 78148464,
+        "address": 78148464
+      },
+      "adrp_address": 48351732,
+      "add_address": 48351740,
+      "instructions": [
+        "adrp x2, #0x4a87000",
+        "add x2, x2, #0x370"
+      ]
+    },
+    {
+      "target": {
+        "category": "cine_ei",
+        "text": "static void model::model_extern::extern_BKID_APP_EXTERN_BASE_ISO()",
+        "file_offset": 78142944,
+        "address": 78142944
+      },
+      "adrp_address": 48358892,
+      "add_address": 48358900,
+      "instructions": [
+        "adrp x2, #0x4a85000",
+        "add x2, x2, #0xde0"
+      ]
+    },
+    {
+      "target": {
+        "category": "user_lut",
+        "text": "model_user_lut_files read3DLUTFile!! line[%d] lutNo[%d]",
+        "file_offset": 78613874,
+        "address": 78613874
+      },
+      "adrp_address": 50996300,
+      "add_address": 50996308,
+      "instructions": [
+        "adrp x0, #0x4af8000",
+        "add x0, x0, #0xd72"
+      ]
+    },
+    {
+      "target": {
+        "category": "user_lut",
+        "text": "model_user_lut_files read3DLUTFile!! line[%d] read_size[%d]",
+        "file_offset": 78613930,
+        "address": 78613930
+      },
+      "adrp_address": 50996360,
+      "add_address": 50996364,
+      "instructions": [
+        "adrp x0, #0x4af8000",
+        "add x0, x0, #0xdaa"
+      ]
+    },
+    {
+      "target": {
+        "category": "user_lut",
+        "text": "model_user_lut_files::mount_lut_folder():OK",
+        "file_offset": 78614084,
+        "address": 78614084
+      },
+      "adrp_address": 50997364,
+      "add_address": 50997368,
+      "instructions": [
+        "adrp x0, #0x4af8000",
+        "add x0, x0, #0xe44"
+      ]
+    },
+    {
+      "target": {
+        "category": "user_lut",
+        "text": "model_user_lut_files::umount_lut_folder():OK",
+        "file_offset": 78614172,
+        "address": 78614172
+      },
+      "adrp_address": 50997436,
+      "add_address": 50997440,
+      "instructions": [
+        "adrp x0, #0x4af8000",
+        "add x0, x0, #0xe9c"
+      ]
+    },
+    {
+      "target": {
+        "category": "user_lut",
+        "text": "static bool model::sequence_select_lut::send_lut(model::setting_select_lut_t, model::is_exist_user_lut_t, uint32_t*, uint32_t*)",
+        "file_offset": 78908448,
+        "address": 78908448
+      },
+      "adrp_address": 54967128,
+      "add_address": 54967136,
+      "instructions": [
+        "adrp x2, #0x4b40000",
+        "add x2, x2, #0xc20"
+      ]
+    },
+    {
+      "target": {
+        "category": "anamorphic",
+        "text": "virtual void model::sequence_set_anamo_desqueeze_scale::run()",
+        "file_offset": 78914392,
+        "address": 78914392
+      },
+      "adrp_address": 55008964,
+      "add_address": 55008976,
+      "instructions": [
+        "adrp x2, #0x4b42000",
+        "add x2, x2, #0x358"
+      ]
+    },
+    {
+      "target": {
+        "category": "anamorphic",
+        "text": "virtual void model::sequence_set_anamo_desqueeze_scale::run()",
+        "file_offset": 78914392,
+        "address": 78914392
+      },
+      "adrp_address": 55009068,
+      "add_address": 55009080,
+      "instructions": [
+        "adrp x2, #0x4b42000",
+        "add x2, x2, #0x358"
+      ]
+    }
+  ],
+  "relocation_references": [
+    {
+      "target": {
+        "category": "shutter_angle",
+        "text": "PRM_setting_shutter_angle",
+        "file_offset": 79417862,
+        "address": 79417862
+      },
+      "slot_address": 90826704,
+      "type": 1027
+    },
+    {
+      "target": {
+        "category": "shutter_angle",
+        "text": "BKID_APP_SETTING_SHUTTER_ANGLE",
+        "file_offset": 81985516,
+        "address": 81985516
+      },
+      "slot_address": 91061120,
+      "type": 1027
+    },
+    {
+      "target": {
+        "category": "anamorphic",
+        "text": "BKID_APP_SETTING_DE_SQUEEZE_DISP",
+        "file_offset": 82004809,
+        "address": 82004809
+      },
+      "slot_address": 91068464,
+      "type": 1027
+    }
+  ],
+  "runtime_tested": false,
+  "activation_tested": false
+}
