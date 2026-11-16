@@ -16,6 +16,7 @@ The two firmware filenames were initially swapped and have been corrected. The A
 
 ## Research records
 
+- [R6 firmware access and English-menu status](docs/research/2026-11-16-r6-access-and-language-status.md)
 - [FX3-related components found in R5 firmware](docs/research/2026-11-16-r5-fx3-static-audit.md)
 - [A7R V feature-port candidates](docs/research/2026-11-05-a7rv-feature-port-candidates.md)
 - [fwtool a7iv validation](docs/research/2026-11-05-fwtool-a7iv.md)
