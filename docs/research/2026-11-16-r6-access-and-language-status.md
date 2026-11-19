@@ -2,7 +2,7 @@
 
 ## Scope
 
-Checked on 2026-11-16 after a request to enable English on an A7R VI. The specific body's market version, available language choices, and installed firmware have not yet been confirmed. No camera language change was performed.
+Initially checked on 2026-11-16 after a request to enable English on an A7R VI. On 2026-11-19, the user confirmed firmware 1.02 and that English is unavailable because of locale restrictions. The exact market/region code remains unconfirmed. No camera language change has been performed.
 
 ## Normal language selection
 
@@ -23,6 +23,14 @@ GitHub repository and issue searches for `ILCE-7RM6`, `A7RVI`, and `a7r6`, toget
 
 Sony's [current firmware listing](https://support.sony.jp/electronics/support/e-mount-body-ilce-7-series/ilce-7rm6/downloads) still lists 1.02, released on 2026-10-21.
 
+## Service authentication finding, 2026-11-19
+
+The current PMCA RE Reloaded source was inspected at commit `3121bb856151ce33cb5ea266a5f503d478a86678`, dated 2026-11-18. Its authentication implementation explicitly returns `SenserV2Unsupported` when the first authentication reply has return value `9` and a payload beginning with `0x02`. The implemented legacy paths accept SHA-1 or SHA-256 challenge selections instead. This is a direct source-code observation, not a captured response from the user's camera. Source: [SenserAuthDevice::authenticate](https://github.com/masterflai/pmca-re-reloaded/blob/3121bb856151ce33cb5ea266a5f503d478a86678/crates/pmca-usb/src/senser.rs#L398-L420).
+
+The maintainer's device documentation identifies the R6 among bodies with an RSA-signed Senser v2 handshake and marks its community support as disputed. That protocol attribution is an external maintainer report; it was not independently established through a device trace or R6 firmware analysis here. Source: [device documentation](https://github.com/masterflai/pmca-re-reloaded/blob/3121bb856151ce33cb5ea266a5f503d478a86678/crates/pmca-app/src/devices.rs#L271-L279).
+
+The legacy language-mask implementation does not bypass this authentication requirement. An English-language flag in older models is therefore insufficient evidence of an applicable R6 unlock. The current public tool does not provide the required v2 authentication path. This does not prove that every alternative access method is unavailable.
+
 ## New color-processing work
 
 [cyZhu98/a7r6-looks](https://github.com/cyZhu98/a7r6-looks) has changes dated 2026-11-12: Classic Chrome profile work and Classic Negative calibration previews. The reviewed head is `d3bbe69a1093707b2fb66e1b397ec23f905a47e0`.
@@ -31,6 +39,6 @@ The project reconstructs Sony Creative Looks for Lightroom/Camera Raw from ARW m
 
 The color pipeline may help comparative look research without extracting R6 firmware. Compatibility with the R5 requires separate parameter and calibration work.
 
-## Next information needed
+## Next check
 
-Confirm whether English appears in the body's Language menu, the market version, and the installed firmware. If English is absent, a normal settings change is insufficient. A camera-specific access method and verified property mapping are needed before attempting an unlock. The current public evidence does not provide them.
+The target firmware and missing English option are now confirmed. The next device check is identification and service-access behavior on the actual body, using a computer to which the user can connect it. The local USB inventory on 2026-11-19 did not show a Sony device, and the target computer is pending. A diagnostic connection would establish compatibility evidence; it is not an established English-unlock procedure. A camera-specific access method and verified property mapping remain necessary before changing the language configuration.
