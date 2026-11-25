@@ -9,7 +9,6 @@
     "pycryptodomex": "3.24.1",
     "PyYAML": "6.0.3"
   },
-  "official_hash_comparison_performed": false,
   "files": [
     {
       "file": "A7R5_4.00.DAT",
@@ -51,6 +50,7 @@
       "identified_model": "ILCE-7RM5",
       "identified_version": "4.00",
       "identification_basis": "decrypted FDAT metadata and official file size",
+      "official_hash_comparison_performed": false,
       "crypter": "CXD90057_k8",
       "model_id": "0x11030080",
       "ufu_crc_valid": true
@@ -96,7 +96,22 @@
       "identified_version": null,
       "expected_model": "ILCE-7RM6",
       "expected_version": "1.02",
-      "identification_basis": "inferred from official file size and supplied context; internal identity unverified",
+      "identification_basis": "byte-for-byte match to the official Sony Japan download; internal FDAT identity unverified",
+      "official_hash_comparison_performed": true,
+      "official_download": {
+        "checked_on": "2026-11-25",
+        "market": "JP",
+        "model": "ILCE-7RM6",
+        "version": "1.02",
+        "release_date": "2026-10-21",
+        "file": "BODYDATA.DAT",
+        "release_page": "https://support.sony.jp/electronics/support/e-mount-body-ilce-7-series/ilce-7rm6/software/00413256",
+        "download_url": "https://support.d-imaging.sony.co.jp/download/NEX/by48483927/BODYDATA.DAT?fm=jp",
+        "effective_download_url": "https://di.update.sony.net/NEX/by48483927/BODYDATA.DAT",
+        "size_bytes": 338327032,
+        "sha256": "831fa09a2839840cd0066fec2cc7ad68c0bb574ecd28ecd4305a64690eb454e9",
+        "byte_for_byte_match": true
+      },
       "error": "No decrypter found",
       "ufu_crc_valid": true
     }

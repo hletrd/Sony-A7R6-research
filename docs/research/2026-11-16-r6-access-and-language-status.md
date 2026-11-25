@@ -1,5 +1,7 @@
 # A7R VI access and English-menu status
 
+The [November 25 follow-up](2026-11-25-r6-firmware-1.02.md) verifies the firmware download and reviews PMCA-RE Reloaded 1.15.1 and Sony's regional language documentation.
+
 ## Scope
 
 Initially checked on 2026-11-16 after a request to enable English on an A7R VI. On 2026-11-19, the user confirmed firmware 1.02 and that English is unavailable because of locale restrictions. The exact market/region code remains unconfirmed. No camera language change has been performed.

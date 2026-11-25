@@ -17,4 +17,4 @@ These research candidates were collected on 2026-11-05. Their target cameras and
 | [DavidBuchanan314/fwtool.py, a7iv](https://github.com/DavidBuchanan314/fwtool.py/tree/a7iv) | Firmware extraction tool used in validation |
 | [EnglandLobster/sony-lut-camera](https://github.com/EnglandLobster/sony-lut-camera) | LUT processing in older Android/PMCA environments |
 
-See the [fwtool experiment](research/2026-11-05-fwtool-a7iv.md) and [LUT applicability review](research/2026-11-05-sony-lut-camera.md). The other repositories have been collected, but their individual features have not been validated locally.
+The source collection was refreshed on 2026-11-25. See the [A7R VI 1.02 follow-up](research/2026-11-25-r6-firmware-1.02.md), [fwtool experiment](research/2026-11-05-fwtool-a7iv.md), and [LUT applicability review](research/2026-11-05-sony-lut-camera.md) for the specific revisions and behavior checked.
